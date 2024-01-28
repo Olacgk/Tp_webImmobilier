@@ -1,0 +1,94 @@
+﻿@model PagedList.IPagedList<WebImmobilier.Models.MaisonViewModel>
+@using PagedList.Mvc
+@{
+    ViewBag.Title = "Liste des maisons";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+    <h2>Liste des maisons</h2>
+
+    <div class="btn btn-primary text-light">
+        <p class="text-light m-0">
+            @Html.ActionLink("Ajouter", "Create", null, new { @class = "text-light" })
+        </p>
+    </div>
+    
+</div>
+
+<table class="table">
+    <tr>
+        @*<th>
+            @Html.DisplayNameFor(model => model.Proprietaire.NomUtilisateur)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().DescriptionBien)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.SuperficieBien)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().LocaliteBien)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().NbreChambre)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.NbreSalleEau)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().NbreCuisine)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.NbreToilette)
+        </th>*@
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.Proprietaire.NomUtilisateur)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.DescriptionBien)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.SuperficieBien)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.LocaliteBien)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NbreChambre)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.NbreSalleEau)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.NbreCuisine)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.NbreToilette)
+        </td>*@
+        <td>
+            <div class="dropdown">
+                <div class="dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+                    <i class="icon icon-menu-dots"></i>
+                </div>
+                <ul class="dropdown-menu">
+                    <li class="dropdown-item">@Html.ActionLink("Edit", "Edit", new { id = item.IdBien })</li>
+                    <li class="dropdown-item">@Html.ActionLink("Details", "Details", new { id = item.IdBien })</li>
+                    <li class="dropdown-item">@Html.ActionLink("Delete", "Delete", new { id = item.IdBien })</li>
+                </ul>
+            </div>
+        </td>
+    </tr>
+}
+
+</table>
+
+<br/>
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount
+
+    @Html.PagedListPager(Model, Page => Url.Action("Index", new {Page}))

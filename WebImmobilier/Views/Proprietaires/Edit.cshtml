@@ -1,0 +1,63 @@
+﻿@model WebImmobilier.Models.Proprietaire
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Modification</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="row">
+        <h4>@*Proprietaire*@</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.IdUtilisateur)
+
+        <div class="col-md-6 mt-3">
+            @Html.LabelFor(model => model.NomUtilisateur, htmlAttributes: new { @class = "control-label" })
+            <div>
+                @Html.EditorFor(model => model.NomUtilisateur, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.NomUtilisateur, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="col-md-6 mt-3">
+            @Html.LabelFor(model => model.PrenomUtilisateur, htmlAttributes: new { @class = "control-label" })
+            <div>
+                @Html.EditorFor(model => model.PrenomUtilisateur, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PrenomUtilisateur, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="col-md-6 mt-3">
+            @Html.LabelFor(model => model.LoginUtilisateur, htmlAttributes: new { @class = "control-label" })
+            <div>
+                @Html.EditorFor(model => model.LoginUtilisateur, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.LoginUtilisateur, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="col-md-6 mt-3">
+            @Html.LabelFor(model => model.TelephoneProprio, htmlAttributes: new { @class = "control-label" })
+            <div>
+                @Html.EditorFor(model => model.TelephoneProprio, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TelephoneProprio, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="mt-4 d-flex justify-content-end w-100" style="gap: 20px;">
+            @Html.ActionLink("Retour", "Index", null, new { @class = "btn btn-outline-primary" })
+            <input type="submit" value="Enregistrer" class="btn btn-primary" />
+        </div>
+    </div>
+}
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

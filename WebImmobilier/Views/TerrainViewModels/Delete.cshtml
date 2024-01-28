@@ -1,0 +1,89 @@
+﻿@model WebImmobilier.Models.Terrain
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Suppression</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>TerrainViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Proprietaire.NomUtilisateur)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Proprietaire.NomUtilisateur)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DescriptionBien)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DescriptionBien)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SuperficieBien)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SuperficieBien)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LocaliteBien)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LocaliteBien)
+        </dd>
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.NbreSalleEau)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NbreSalleEau)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NbreCuisine)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NbreCuisine)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NbreToilette)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NbreToilette)
+        </dd>*@
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TypeTerrain)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TypeTerrain)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-primary" /> |
+            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-outline-primary"})
+        </div>
+    }
+</div>

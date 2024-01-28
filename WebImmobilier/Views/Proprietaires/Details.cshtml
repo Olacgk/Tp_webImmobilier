@@ -1,0 +1,51 @@
+﻿@model WebImmobilier.Models.Proprietaire
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details du propriétaire @Html.DisplayFor(model => model.NomUtilisateur) </h2>
+
+<div>
+    @*<h4>Proprietaire</h4>*@
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NomUtilisateur)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomUtilisateur)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PrenomUtilisateur)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrenomUtilisateur)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LoginUtilisateur)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LoginUtilisateur)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TelephoneProprio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TelephoneProprio)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdUtilisateur }, new { @class = "btn btn-primary" }) |
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-outline-primary"})
+</p>

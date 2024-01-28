@@ -1,0 +1,62 @@
+﻿@model IEnumerable<WebImmobilier.Models.Proprietaire>
+
+@{
+    ViewBag.Title = "Liste des propriétaires";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-2">
+    <h2>Liste des propriétaires</h2>
+
+    <p class="btn btn-primary">
+        @Html.ActionLink("Ajouter", "Create", null, new { @class = "text-light" })
+    </p>
+</div>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NomUtilisateur)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrenomUtilisateur)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LoginUtilisateur)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TelephoneProprio)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NomUtilisateur)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PrenomUtilisateur)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LoginUtilisateur)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TelephoneProprio)
+        </td>
+        <td>
+            <div class="dropdown">
+                <div class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    <i class="icon icon-menu-dots"></i>
+                </div>
+                <ul class="dropdown-menu">
+                    <li class="dropdown-item">@Html.ActionLink("Edit", "Edit", new { id = item.IdUtilisateur })</li>
+                    <li class="dropdown-item">@Html.ActionLink("Details", "Details", new { id = item.IdUtilisateur })</li>
+                    <li class="dropdown-item">@Html.ActionLink("Delete", "Delete", new { id = item.IdUtilisateur })</li>
+                </ul>
+            </div>
+        </td>
+    </tr>
+}
+
+</table>

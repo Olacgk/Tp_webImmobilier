@@ -1,0 +1,86 @@
+﻿@model IEnumerable<WebImmobilier.Models.StudioViewModel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2>Liste des studios</h2>
+
+    <p>
+        @Html.ActionLink("Ajouter", "Create", null, new { @class = "btn btn-primary" })
+    </p>
+</div>
+
+<table class="table">
+    <tr>
+        @*<th>
+            @Html.DisplayNameFor(model => model.Proprietaire.NomUtilisateur)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.DescriptionBien)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.SuperficieBien)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.LocaliteBien)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.NbreSalleEau)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NbreCuisine)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NbreToilette)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.NbrePiece)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.Proprietaire.NomUtilisateur)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.DescriptionBien)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.SuperficieBien)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.LocaliteBien)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.NbreSalleEau)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NbreCuisine)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NbreToilette)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.NbrePiece)
+        </td>
+        <td>
+            <div class="dropdown">
+                <div class="dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+                    <i class="icon icon-menu-dots"></i>
+                </div>
+                <ul class="dropdown-menu">
+                    <li class="dropdown-item">@Html.ActionLink("Edit", "Edit", new { id = item.IdBien })</li>
+                    <li class="dropdown-item">@Html.ActionLink("Details", "Details", new { id = item.IdBien })</li>
+                    <li class="dropdown-item">@Html.ActionLink("Delete", "Delete", new { id = item.IdBien })</li>
+                </ul>
+            </div>
+        </td>
+    </tr>
+}
+
+</table>

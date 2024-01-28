@@ -1,0 +1,83 @@
+﻿@model WebImmobilier.Models.Studio
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>StudioViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Proprietaire.NomUtilisateur)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Proprietaire.NomUtilisateur)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DescriptionBien)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DescriptionBien)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SuperficieBien)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SuperficieBien)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LocaliteBien)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LocaliteBien)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NbreSalleEau)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NbreSalleEau)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NbreCuisine)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NbreCuisine)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NbreToilette)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NbreToilette)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NbrePiece)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NbrePiece)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdBien }, new { @class = "btn btn-outline-primary"}) |
+    @Html.ActionLink("Back to List", "Index", null, new { @class= "btn btn-primary"})
+</p>

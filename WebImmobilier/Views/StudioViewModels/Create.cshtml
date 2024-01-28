@@ -1,0 +1,96 @@
+﻿@model WebImmobilier.Models.StudioViewModel
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Ajout d'un studio</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="row">
+        @*<h4>StudioViewModel</h4>*@
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="col-md-6 mt-3">
+            @Html.LabelFor(model => model.DescriptionBien, htmlAttributes: new { @class = "control-label " })
+            <div>
+                @Html.EditorFor(model => model.DescriptionBien, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DescriptionBien, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="col-md-6 mt-3">
+            @Html.LabelFor(model => model.SuperficieBien, htmlAttributes: new { @class = "control-label " })
+            <div>
+                @Html.EditorFor(model => model.SuperficieBien, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.SuperficieBien, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="col-md-6 mt-3">
+            @Html.LabelFor(model => model.LocaliteBien, htmlAttributes: new { @class = "control-label " })
+            <div>
+                @Html.EditorFor(model => model.LocaliteBien, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.LocaliteBien, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="col-md-6 mt-3">
+            @Html.LabelFor(model => model.NbreSalleEau, htmlAttributes: new { @class = "control-label " })
+            <div>
+                @Html.EditorFor(model => model.NbreSalleEau, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.NbreSalleEau, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="col-md-6 mt-3">
+            @Html.LabelFor(model => model.NbreCuisine, htmlAttributes: new { @class = "control-label " })
+            <div>
+                @Html.EditorFor(model => model.NbreCuisine, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.NbreCuisine, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="col-md-6 mt-3">
+            @Html.LabelFor(model => model.NbreToilette, htmlAttributes: new { @class = "control-label " })
+            <div>
+                @Html.EditorFor(model => model.NbreToilette, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.NbreToilette, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="col-md-6 mt-3">
+            @Html.LabelFor(model => model.IdProprio, "IdProprio", htmlAttributes: new { @class = "control-label " })
+            <div>
+                @Html.DropDownList("IdProprio", null,"-- Sélectionnez un propriétaire --", htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.IdProprio, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="col-md-6 mt-3">
+            @Html.LabelFor(model => model.NbrePiece, htmlAttributes: new { @class = "control-label " })
+            <div>
+                @Html.EditorFor(model => model.NbrePiece, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.NbrePiece, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="mt-4 d-flex justify-content-end w-100" style="gap: 20px;">
+            @Html.ActionLink("Back to List", "Index", null, new { @class= "btn btn-outline-primary"})
+
+            <input type="submit" value="Create" class="btn btn-primary" />
+        </div>
+    </div>
+}
+
+<div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
