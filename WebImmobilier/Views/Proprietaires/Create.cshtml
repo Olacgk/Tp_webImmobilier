@@ -1,11 +1,11 @@
-﻿@model WebImmobilier.Models.Proprietaire
-
+﻿@using WebImmobilier.Models
+@model WebImmobilier.Models.Proprietaire
 @{
     ViewBag.Title = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2 class="mb-3">Création d'un propriétaire</h2>
+<h2 class="mb-3">@ResourceImmo.TitreCreationProprio</h2>
 
 
 @using (Html.BeginForm()) 
@@ -49,8 +49,8 @@
         </div>
 
         <div class="mt-4 d-flex justify-content-end w-100" style="gap: 20px;">
-            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-outline-primary" })
-            <input type="submit" value="Create" class="btn btn-primary" />
+            @Html.ActionLink(ResourceImmo.Back, "Index", null, new { @class = "btn btn-outline-primary" })
+            <input type="submit" value="@ResourceImmo.Save" class="btn btn-primary" />
         </div>
     </div>
 }

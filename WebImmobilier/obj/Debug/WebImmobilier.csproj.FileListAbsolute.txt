@@ -110,3 +110,5 @@ C:\Users\timoc\Documents\Cours Master\ASP.NET\M1Gl2023\WebImmobilier\bin\PagedLi
 C:\Users\timoc\Documents\Cours Master\ASP.NET\M1Gl2023\WebImmobilier\bin\PagedList.Mvc.dll
 C:\Users\timoc\Documents\Cours Master\ASP.NET\M1Gl2023\WebImmobilier\bin\PagedList.xml
 C:\Users\timoc\Documents\Cours Master\ASP.NET\M1Gl2023\WebImmobilier\bin\PagedList.Mvc.xml
+C:\Users\timoc\Documents\Cours Master\ASP.NET\M1Gl2023\WebImmobilier\obj\Debug\WebImmobilier.Models.ResourceImmo.resources
+C:\Users\timoc\Documents\Cours Master\ASP.NET\M1Gl2023\WebImmobilier\obj\Debug\WebImmobilier.csproj.GenerateResource.cache

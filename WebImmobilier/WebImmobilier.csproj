@@ -195,6 +195,11 @@
     <Compile Include="Models\Maison.cs" />
     <Compile Include="Models\MaisonViewModel.cs" />
     <Compile Include="Models\Proprietaire.cs" />
+    <Compile Include="Models\ResourceImmo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceImmo.resx</DependentUpon>
+    </Compile>
     <Compile Include="Models\Studio.cs" />
     <Compile Include="Models\StudioViewModel.cs" />
     <Compile Include="Models\Terrain.cs" />
@@ -4384,6 +4389,12 @@
     <Content Include="Scripts\bootstrap.bundle.js.map" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Models\ResourceImmo.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceImmo.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

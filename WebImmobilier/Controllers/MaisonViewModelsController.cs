@@ -47,7 +47,7 @@ namespace WebImmobilier.Controllers
             page = page.HasValue ? page : 1;
             var maisonViewModels = GetMaisonViewModels();
             var list = maisonViewModels.ToList();
-            return View(list.ToPagedList(pageSized, (int)page));
+            return View(list.ToPagedList((int)page, pageSized));
         }
 
         // GET: MaisonViewModels/Details/5
